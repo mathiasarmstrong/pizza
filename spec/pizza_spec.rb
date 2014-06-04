@@ -8,7 +8,7 @@ end
 
 describe Topping do
 
-  let(:topping){Topping.new('olives', true)}
+  let(:topping){Topping.new('olives', vegetarian: true)}
 
   it "exists" do
     expect(Topping).to be_a(Class)
