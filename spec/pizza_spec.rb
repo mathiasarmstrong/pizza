@@ -19,7 +19,7 @@ describe Topping do
       expect(topping.name).to eq("olives")
     end
     it "lets us know if the topping is vegetarian"do
-      expect(topping.vegetarian).to_be true
+      expect(topping.vegetarian).to be_true
     end
   end
 end
