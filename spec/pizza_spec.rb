@@ -64,7 +64,7 @@ describe Pizza do
     it "marks a delivery time attribute 30 mins from now" do
       pizza = Pizza.new
       time_now = Time.now
-      Time.stub!(:now).and_return(time_now)
+      Time.stub(:now).and_return(time_now)
       pizza.deliver!
       expect(pizza.delivery_time).to eq(Time.now+30*60)
     end
@@ -75,11 +75,11 @@ describe Pizza do
       pizza = Pizza.new
       time_now = Time.now
 
-      Time.stub!(:now).and_return(time_now)
+      Time.stub(:now).and_return(time_now)
       pizza.deliver!
       expect(pizza.late?).to be_false
 
-      Time.stub!(:now).and_return(time_now+200)
+      Time.stub(:now).and_return(time_now+2000)
       expect(pizza.late?).to be_true
 
     end

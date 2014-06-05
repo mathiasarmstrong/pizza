@@ -10,13 +10,17 @@ class Pizza
   end
 
   def add_topping(top, veg = false)
-    topp = Topping.new(top, vegetarian: veg)
-    @toppings << topp
+    @toppings << Topping.new(top, vegetarian: veg)
   end
 
   def deliver!
     @delivery_time=Time.now+30*60
   end
+
+  def late?
+    Time.now >= @delivery_time ? true : false
+  end
+
 end
 
 class Topping
