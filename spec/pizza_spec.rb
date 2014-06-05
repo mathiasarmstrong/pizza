@@ -60,6 +60,17 @@ describe Pizza do
       expect(pizza.vegetarian?).to be_false
     end
   end
+  describe "#deliver!" do
+    it "marks a delivery time attribute 30 mins from now" do
+      pizza = Pizza.new
+      time_now = Time.now
+      Time.stub!(:now).and_return(time_now)
+
+      pizza.deliver!
+      expect(pizza.delivery_time).to eq(time.now+30*60)
+    end
+  end
+
 
 end
 
