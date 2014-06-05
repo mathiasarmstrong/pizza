@@ -65,13 +65,25 @@ describe Pizza do
       pizza = Pizza.new
       time_now = Time.now
       Time.stub!(:now).and_return(time_now)
-
       pizza.deliver!
       expect(pizza.delivery_time).to eq(Time.now+30*60)
     end
   end
 
+  describe "#late?" do
+    it " tells us if it past the delivery time or not" do
+      pizza = Pizza.new
+      time_now = Time.now
 
+      Time.stub!(:now).and_return(time_now)
+      pizza.deliver!
+      expect(pizza.late?).to be_false
+
+      Time.stub!(:now).and_return(time_now+200)
+      expect(pizza.late?).to be_true
+
+    end
+  end
 end
 
 describe Topping do
