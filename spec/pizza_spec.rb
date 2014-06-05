@@ -5,7 +5,7 @@ describe Pizza do
   #   expect(Pizza).to be_a(Class)
   # end
 
-  describe ".initialize" do
+  describe "#initialize" do
     it "records all of the toppings" do
       toppings= [
         Topping.new("mushrooms", vegetarian: true),
@@ -24,7 +24,7 @@ describe Pizza do
     end
   end
 
-  describe ".vegetarian?" do
+  describe "#vegetarian?" do
     it "returns a true or false value as to whether all the toppings on a pizza are vegetarian" do
       toppings= [
         Topping.new("mushrooms", vegetarian: true),
@@ -42,7 +42,7 @@ describe Pizza do
       expect(pizza.vegetarian?).to be_true
     end
   end
-   describe ".add_topping" do
+   describe "#add_topping" do
     it "adds a topping to the pizza" do
       toppings= [
         Topping.new("mushrooms", vegetarian: true),
@@ -60,6 +60,7 @@ describe Pizza do
       expect(pizza.vegetarian?).to be_false
     end
   end
+
 end
 
 describe Topping do
@@ -69,7 +70,7 @@ describe Topping do
   it "exists" do
     expect(Topping).to be_a(Class)
   end
-  describe ".initialize" do
+  describe "#initialize" do
     it "sets the name of the topping" do
        # topping=Topping.new("olives")
       expect(topping.name).to eq("olives")
