@@ -4,8 +4,8 @@ class Pizza
   @toppings=topping1
   end
   def vegetarian?
-    veg = @toppings.select{|top| top.vegetarian == false}
-    veg.length == 0 ? (return true) : (return false)
+   return veg = @toppings.all?{|top| top.vegetarian == true}
+
   end
 end
 
