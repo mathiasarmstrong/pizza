@@ -67,7 +67,7 @@ describe Pizza do
       Time.stub!(:now).and_return(time_now)
 
       pizza.deliver!
-      expect(pizza.delivery_time).to eq(time.now+30*60)
+      expect(pizza.delivery_time).to eq(Time.now+30*60)
     end
   end
 
