@@ -1,8 +1,11 @@
 class Pizza
   attr_accessor :toppings
   def initialize(topping1 = [Topping.new("cheese", vegetarian: true)])
-
   @toppings=topping1
+  end
+  def vegetarian?
+    veg = @toppings.select{|top| top.vegetarian == false}
+    veg.length == 0 ? (return true) : (return false)
   end
 end
 
